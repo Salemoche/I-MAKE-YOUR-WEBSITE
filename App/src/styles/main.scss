@@ -1,3 +1,10 @@
 // Base
 
-@import './_base/default'
+@import './_base/config';
+@import './_base/default';
+
+// Modules
+
+@import './_modules/menu';
+@import './_modules/landing';
+@import './_modules/about';
