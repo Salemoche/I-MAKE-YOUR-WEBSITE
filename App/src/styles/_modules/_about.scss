@@ -2,6 +2,25 @@
 
   &__content {
 
+    background: green;
+
+    transform: skew(28deg);
+
+    > * {
+      transform: skew(-28deg);
+
+    }
+
+    p {
+
+      margin-left: 150px;
+
+      &:nth-of-type(2) {
+        margin-left: 220px;
+
+      }
+    }
+
     &__photo {
       width: 800px;
       height: 800px;
@@ -14,5 +33,6 @@
       img {
       }
     }
+
   }
 }

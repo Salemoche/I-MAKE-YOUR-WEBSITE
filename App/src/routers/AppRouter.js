@@ -18,7 +18,8 @@ const AppRouter = () => (
       <Switch>
         <Route path="/" component={Landing} exact={true}/>
         <Route path="/en/about" component={About} />
-        <Route path="/en/work" component={Work} />
+        <Route path="/en/work" component={Work} exact={true}/>
+        <Route path="/en/work/:item?" component={Contact} />
         <Route path="/en/offer" component={Offer} />
         <Route path="/en/contact" component={Contact} />
       </Switch>
