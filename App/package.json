@@ -12,6 +12,10 @@
     "dev-server": "webpack-dev-server"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.2.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.2",
+    "@fortawesome/free-solid-svg-icons": "^5.2.0",
+    "@fortawesome/react-fontawesome": "^0.1.2",
     "babel-cli": "6.24.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",

@@ -5,6 +5,16 @@ import 'normalize.css/normalize.css';
 import './styles/main.scss';
 import AppRouter from './routers/AppRouter.js';
 import Scripts from './scripts/script';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHandsHelping, faCoffee, faPenFancy, faChartLine, faCode } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faCoffee)
+library.add(faHandsHelping)
+library.add(faPenFancy)
+library.add(faChartLine)
+library.add(faCode)
+
 
 const jsx = (
   <div>

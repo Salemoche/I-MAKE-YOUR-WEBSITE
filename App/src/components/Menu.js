@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import '../scripts/indentation.js';
 
 const menuStyle = {
   transform: 'skewX(28deg)'
@@ -8,7 +9,7 @@ const menuStyle = {
 
 const Landing = () => {
   return (
-    <div className="menu">
+    <div className="menu menu--closed" id="menu">
       <div className="menu__background hero__background" style={menuStyle}></div>
       <div className="menu__content">
         <NavLink to="/" activeClassName="is-active" exact={true} >
@@ -16,8 +17,8 @@ const Landing = () => {
             <svg width="160" height="78" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient x1="42.258%" y1="0%" x2="21.749%" y2="95.392%" id="gradient">
-                <stop className="darkColor" stop-color="none" offset="0%"/>
-                <stop className="brightColor" stop-color="none" offset="100%"/>
+                <stop className="brightColor" stop-color="none" offset="0%"/>
+                <stop className="darkColor" stop-color="none" offset="100%"/>
               </linearGradient>
             </defs>
             <g fill="none" fill-rule="evenodd">
@@ -27,7 +28,7 @@ const Landing = () => {
           </div>
         </NavLink>
         <ul className="menu__content__list">
-          <li className="contrast__color"><NavLink to="/en/about" activeClassName="is-active">about</NavLink></li>
+          <li className="contrast__color"><NavLink to="/en/about" activeClassName="is-active" onClick={() => {}}>about</NavLink></li>
           <li className="contrast__color"><NavLink to="/en/work" activeClassName="is-active">work</NavLink></li>
           <li className="contrast__color"><NavLink to="/en/offer" activeClassName="is-active">offer</NavLink></li>
           <li className="contrast__color"><NavLink to="/en/contact" activeClassName="is-active">contact</NavLink></li>

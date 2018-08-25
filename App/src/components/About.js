@@ -1,5 +1,7 @@
 import React from 'react';
+import $ from "jquery";
 import CVElement from './CVElement'
+import { indentation } from '../scripts/script'
 
 const cvList = [
   {
@@ -47,37 +49,86 @@ const cvList = [
 ]
 
 
-const About= () => {
-  return (
-    <div className="page page__about">
-      <div className="page__content page__about__content">
-        <h1>about</h1>
-        <hr />
-        <div className="page__about__content__photo">
-          <img src={'../images/profile-picture-square--dark.jpg'} />
+// const About= () => {
+//   return (
+//     <div className="page page__about">
+//       <div className="page__content page__about__content">
+//         <h1>about</h1>
+//         <hr />
+//         <div className="page__content__photo">
+//           <img src={'../images/profile-picture-square--dark.jpg'} />
+//         </div>
+//         <div className="page__content__text">
+//           <p>Giving a user a top experience is what drives Gabriel. Being an interaction designer for him not only means creating intuitive user interfaces. He wants to use his skills in front-end development, web design and user experience to lead everyone to a wholesome experience throughout. </p>
+//           <p>Having studied at the Zurich University of the Arts and the Royal Academy of Art in The Hague, Gabriel enjoys bringing culture and design together. He loves travelling and going abroad to enrich himself and his design work with what other cultures have to offer.</p>
+//         </div>
+//         <ul className="page__content__career">
+//           {
+//             cvList.map( (job) => {
+//               return (
+//                 <CVElement
+//                   startTime={job.startTime}
+//                   endTime={job.endTime}
+//                   description={job.description}
+//                   place={job.place}
+//                   link={job.link}
+//                 />
+//               )
+//             })
+//           }
+//         </ul>
+//       </div>
+//     </div>
+//   )
+// }
+
+
+class About extends React.Component {
+  constructor() {
+    super();
+  }
+
+  componentDidMount() {
+      $(document).ready( function () {
+        indentation($('.page__content__career').children(), 85);
+        indentation($('.page__about .page__content__text').children(), 100);
+      });
+      console.log('component did mount');
+  }
+
+  render() {
+    return (
+      <div className="page page__about">
+        <div className="page__content page__about__content">
+          <h1>about</h1>
+          <hr />
+          <div className="page__content__photo">
+            <img src={'../images/profile-picture-square--dark.jpg'} />
+          </div>
+          <div className="page__content__text">
+            <p>Giving a user a top experience is what drives Gabriel. Being an interaction designer for him not only means creating intuitive user interfaces. He wants to use his skills in front-end development, web design and user experience to lead everyone to a wholesome experience throughout. </p>
+            <p>Having studied at the Zurich University of the Arts and the Royal Academy of Art in The Hague, Gabriel enjoys bringing culture and design together. He loves travelling and going abroad to enrich himself and his design work with what other cultures have to offer.</p>
+          </div>
+          <ul className="page__content__career">
+            {
+              cvList.map( (job) => {
+                return (
+                  <CVElement
+                    startTime={job.startTime}
+                    endTime={job.endTime}
+                    description={job.description}
+                    place={job.place}
+                    link={job.link}
+                  />
+                )
+              })
+            }
+          </ul>
         </div>
-        <div className="page__about__content__text">
-          <p>Giving a user a top experience is what drives Gabriel. Being an interaction designer for him not only means creating intuitive user interfaces. He wants to use his skills in front-end development, web design and user experience to lead everyone to a wholesome experience throughout. </p>
-          <p>Having studied at the Zurich University of the Arts and the Royal Academy of Art in The Hague, Gabriel enjoys bringing culture and design together. He loves travelling and going abroad to enrich himself and his design work with what other cultures have to offer.</p>
-        </div>
-        <ul>
-          {
-            cvList.map( (job) => {
-              return (
-                <CVElement
-                  startTime={job.startTime}
-                  endTime={job.endTime}
-                  description={job.description}
-                  place={job.place}
-                  link={job.link}
-                />
-              )
-            })
-          }
-        </ul>
       </div>
-    </div>
-  )
+    );
+  }
 }
+
 
 export default About;

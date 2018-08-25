@@ -12,6 +12,9 @@ module.exports = (env) => {
       path: path.join(__dirname, 'public', 'dist'), //weird ass relative path with node.js
       filename: 'bundle.js'
     },
+    performance: {
+      hints: false
+    },
     module: {
       rules: [{
         loader: 'babel-loader',

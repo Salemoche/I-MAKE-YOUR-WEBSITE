@@ -1,0 +1,145 @@
+.page__offer {
+
+  .page__content__package__container  {
+
+    display: flex;
+    transform: none;
+    padding: 0 100px;
+    margin-bottom: 50vh;
+
+    .package {
+      width: 33.3%;
+      position: relative;
+
+      &__header {
+        transform: skew(28deg);
+
+        h3 {
+          font-size: 2rem;
+        }
+
+        h4 {
+          font-size: 1.8rem;
+          margin-bottom: 10px;
+        }
+
+        h5 {
+          font-size: 1.4rem;
+          opacity: 0.5;
+          margin-top: 0;
+        }
+
+        &__image svg{
+          margin-left: 80px;
+        }
+      }
+
+      &__info {
+        transform: skew(28deg);
+        padding: 0 30px;
+        height: 500px;
+
+        p {
+          margin:0;
+        }
+
+        ul {
+          margin-top: 40px;
+        }
+
+
+        &__bullet {
+
+          font-size: 1.6rem;
+          position: relative;
+          margin-bottom: 20px;
+
+          &__style {
+            height: 8px;
+            width: 7px;
+            position: absolute;
+            left: -15px;
+            top: 5px;
+            transform: skewX(-28deg);
+          }
+        }
+
+        &__button {
+
+          font-size: 1.4rem;
+          position: absolute;
+          bottom: 30px;
+
+          .button {
+            padding: 13px;
+            transform: skew(-28deg) !important;
+            width: 230px;
+          }
+        }
+      }
+    }
+  }
+
+  .page__content__step__container {
+
+    padding: 0 260px;
+    margin-bottom: 50vh;
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+    }
+
+    p {
+      margin-left: 0;
+    }
+
+    .step {
+      position: relative;
+
+      &__icon {
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        left: -70px;
+        top: -10px;
+        border-radius: 50%;
+
+        svg {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 25px;
+          height: 25px;
+        }
+
+      }
+    }
+  }
+
+  .page__content__service-package__container {
+
+    padding: 0 260px;
+    margin-bottom: 50vh;
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      display: inline-block;
+      width: 70%;
+    }
+
+    p {
+      margin-left: 0;
+      display: inline-block;
+    }
+
+    .service-package {
+
+      &__icon {
+
+      }
+    }
+  }
+}

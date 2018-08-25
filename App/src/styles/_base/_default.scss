@@ -3,10 +3,15 @@
   font-family: 'Lato', sans-serif;
   box-sizing: border-box;
   font-size: 62.5%;
+  font-weight: 400;
   letter-spacing: 2px;
   overflow: none;
   color: $white;
 
+}
+
+body {
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -14,14 +19,27 @@
 }
 
 
-
+h1, h2, h3, h4, h5, h6 {
+  user-select: none;
+}
 
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 10rem;
+  font-weight: 700;
+  font-size: 11rem;
   color: $white;
-  margin-left: 200px;
   margin-bottom: 20px;
+}
+
+h2 {
+
+  font-size: 2.5rem;
+  font-family: 'Playfair Display', 'serif';
+  margin-bottom: 70px;
+}
+
+h4 {
+  font-size: 1.6rem;
 }
 
 h5 {
@@ -31,7 +49,7 @@ h5 {
 p {
   font-size: 1.4rem;
   line-height: 2;
-  width: 50%;
+  // width: 50%;
   margin-left: 200px;
 
 
@@ -40,9 +58,16 @@ p {
 a {
   text-decoration: none;
   color: $black;
+  transition: $transition-time;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 ul {
+  padding: 0;
+  margin: 0;
 }
 
 li {
@@ -53,8 +78,8 @@ li {
 hr {
   width: 100px;
   border-color: $white;
-  margin-left: 200px;
-  margin-bottom: 70px;
+  // margin-bottom: 70px;
+  margin-left: 0px;
 }
 
 .page {
@@ -65,7 +90,7 @@ hr {
 
 
   .page__content {
-    width: 80vw;
+    width: 100vw;
     height: 100vh;
     background: $black;
     position: absolute;
@@ -78,10 +103,50 @@ hr {
 
     }
 
+    .page__content__text {
+
+      padding: 0 0 100px 260px;
+      margin-bottom: 100px;
+
+      p {
+        width: 70%;
+        margin-left: 0px;
+      }
+    }
+
   }
 
 
 }
+
+.button {
+
+  cursor: pointer;
+  transform: skew(0deg) !important;
+  padding: 20px;
+  width: 300px;
+  margin: 0 auto;
+  color: $white;
+  border: none;
+  margin: 0 auto;
+  display: block;
+
+  h6 {
+    transform: skew(28deg);
+    text-align: center;
+    font-size: 1.6rem;
+    margin: 0;
+
+    &:hover {
+      tansform: skew(28deg) scale(1.5) !important;
+    }
+  }
+
+
+
+}
+
+
 
 // .page__about {
 //

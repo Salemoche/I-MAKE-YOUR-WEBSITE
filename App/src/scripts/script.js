@@ -2,17 +2,24 @@ import $ from "jquery";
 
 export default $(document).ready( function () {
 
-  //
+//
+// Random Color
+//
 
   const r = Math.random()*255;
   const g = Math.random()*255;
   const b = Math.random()*255;
+
+  const rM = r<255 ? r + 50 : 255;
+  const gM = g<255 ? g + 50 : 255;
+  const bM = b<255 ? b + 50 : 255;
 
   const rB = r<255 ? r + 100 : 255;
   const gB = g<255 ? g + 100 : 255;
   const bB = b<255 ? b + 100 : 255;
 
   const brightColor = 'rgb(' + rB + ',' + gB + ',' + bB + ')';
+  const midColor = 'rgb(' + rM + ',' + gM + ',' + bM + ')';
   const darkColor = 'rgb(' + r + ',' + g + ',' + b + ')';
 
   function rgbToHsl(r, g, b) {
@@ -41,22 +48,50 @@ export default $(document).ready( function () {
     return [ h, s, l ];
   }
 
-  const brightness = rgbToHsl(r+50, g+50, b+50)[2]; // 1 = bright
-
-  console.log(brightness);
+  const brightness = rgbToHsl(rM, gM, bM)[2]; // 1 = bright
 
   const contrastColor = brightness>0.8 ? '#000' : '#fff';
 
-  console.log(contrastColor);
 
-  $('.hero__background').css('background-color', brightColor);
-  $('.hero__color').css('color', brightColor);
+  $('.hero__background').css('background-color', midColor);
+  $('.hero__color').css('color', midColor);
+  $('.hero__fill').attr('fill', midColor);
   $('.contrast__color a').css('color', contrastColor);
+  $('.contrast__color').css('color', contrastColor);
   $('.darkColor').attr("stop-color", contrastColor);
   $('.brightColor').attr("stop-color", contrastColor);
 
 
   // $('#brightColor').attr("stop-color", 'rgb(' + rB + ',' + gB + ',' + bB + ')');
   // $('#darkColor').attr("stop-color", 'rgb(' + r + ',' + g + ',' + b + ')');
+
+
+  //
+  // Distance Mouse To element
+  //
+
+  var mX, mY, distance,
+          $element  = $('.menu__content__logo');
+
+      function calculateDistance(elem, mouseX, mouseY) {
+          return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left+(elem.width()/2)), 2) + Math.pow(mouseY - (elem.offset().top+(elem.height()/2)), 2)));
+      }
+
+      $(document).mousemove(function(e) {
+          mX = e.pageX;
+          mY = e.pageY;
+          distance = calculateDistance($element, mX, mY);
+
+
+          if(distance <= 300) {
+            $('.menu').removeClass('menu--closed');
+            $('.darkColor').attr("stop-color", contrastColor);
+            $('.brightColor').attr("stop-color", contrastColor);
+          } else {
+            $('.menu').addClass('menu--closed');
+            $('.darkColor').attr("stop-color", darkColor);
+            $('.brightColor').attr("stop-color", brightColor);
+          }
+      });
 
 });

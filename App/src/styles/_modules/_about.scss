@@ -1,9 +1,8 @@
 .page__about {
 
-  &__content {
+  .page__content {
 
-    background: green;
-
+    width: 90vw;
     transform: skew(28deg);
 
     > * {
@@ -11,17 +10,27 @@
 
     }
 
-    p {
+    h1 {
+      margin-left: 200px;
+    }
 
-      margin-left: 150px;
+    hr {
+      margin-left: 200px;
+      margin-bottom: 70px;
+    }
 
-      &:nth-of-type(2) {
-        margin-left: 220px;
+    .page__content__text {
+      padding: 0 130px;
+      margin-bottom: 100px;
 
+      p {
+        width: 70%;
+        margin-left: 150px;
       }
     }
 
-    &__photo {
+
+    .page__content__photo {
       width: 800px;
       height: 800px;
       position: absolute;
@@ -31,6 +40,27 @@
       transform: skew(-28deg) translateX(-50%);
 
       img {
+      }
+    }
+
+    .page__content__career {
+
+      padding: 0 20px;
+
+      li {
+
+        margin-bottom: 40px;
+
+        a {
+          font-size: 1.4rem;
+        }
+
+        hr {
+          margin-left: 0px;
+          margin-top: 20px;
+          margin-bottom: 0;
+        }
+
       }
     }
 
