@@ -1,7 +1,7 @@
 import $ from "jquery";
 import React from 'react';
 import ShowreelItem from './ShowreelItem';
-import { indentation } from '../scripts/indentation'
+import { indentation, changeColor } from '../scripts/script'
 
 const showreelItems = [
   {
@@ -38,18 +38,14 @@ class Work extends React.Component {
     super();
   }
 
+
   componentDidMount() {
-
-      $(document).ready(function () {
-        if($('.page__work__content')) {
-          $('.page__work .page__work__content').scrollTop($('.page__work__content')[0].scrollHeight - $(window).innerHeight());
-        }
-
-        indentation($('.page__work .page__content__text').children(), -50);
-
-      });
-
       console.log('component did mount');
+
+      const pageWorkChildren = document.querySelector('.page__work .page__content__text').childNodes;
+
+      indentation(pageWorkChildren, -100);
+      changeColor();
   }
 
   render() {

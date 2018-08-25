@@ -45,8 +45,8 @@ const WorkPiece = () => {
 // Indentation
 //
 
-$(document).ready( function () {
-  indentation($('.page__work .page__content__text').children(), -50);
-});
+// $(document).ready( function () {
+//   indentation($('.page__work .page__content__text').children(), -50);
+// });
 
 export default WorkPiece;

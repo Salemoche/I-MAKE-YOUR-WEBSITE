@@ -1,7 +1,8 @@
 import React from 'react';
-import $ from "jquery";
+// import $ from "jquery";
 import CVElement from './CVElement'
-import { indentation } from '../scripts/script'
+import { indentation, changeColor } from '../scripts/script'
+import AnimatedWrapper from "../animation/AnimatedWrapper";
 
 const cvList = [
   {
@@ -89,11 +90,14 @@ class About extends React.Component {
   }
 
   componentDidMount() {
-      $(document).ready( function () {
-        indentation($('.page__content__career').children(), 85);
-        indentation($('.page__about .page__content__text').children(), 100);
-      });
       console.log('component did mount');
+
+      const pageAboutChildren = document.querySelector('.page__about .page__content__text').childNodes;
+      const pageAboutCareer = document.querySelector('.page__content__career').childNodes;
+
+      indentation(pageAboutChildren, 100);
+      indentation(pageAboutCareer, 85);
+      changeColor();
   }
 
   render() {
@@ -130,5 +134,5 @@ class About extends React.Component {
   }
 }
 
-
+// const About = AnimatedWrapper(AboutComponent);
 export default About;

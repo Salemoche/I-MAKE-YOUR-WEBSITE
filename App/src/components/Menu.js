@@ -12,7 +12,7 @@ const Landing = () => {
     <div className="menu menu--closed" id="menu">
       <div className="menu__background hero__background" style={menuStyle}></div>
       <div className="menu__content">
-        <NavLink to="/" activeClassName="is-active" exact={true} >
+        <NavLink to="/test" activeClassName="is-active" exact={true} >
           <div className="menu__content__logo">
             <svg width="160" height="78" xmlns="http://www.w3.org/2000/svg">
             <defs>

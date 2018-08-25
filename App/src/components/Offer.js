@@ -4,7 +4,7 @@ import Package from './Package'
 import Button from './Button'
 import Step from './Step'
 import ServicePackage from './ServicePackage'
-import { indentation } from '../scripts/script'
+import { indentation, changeColor } from '../scripts/script'
 
 const packages = [
   {
@@ -91,11 +91,14 @@ class Offer extends React.Component {
   }
 
   componentDidMount() {
-      $(document).ready( function () {
-        // indentation($('.package__info').children(), 100);
-        // indentation($('.package').children(), 100);
-      });
-      console.log('component did mount');
+    console.log('component did mount');
+
+    const pageOfferChildren = document.querySelector('.page__offer').childNodes;
+    const packageChildren = document.querySelector('.package').childNodes;
+
+    indentation(pageOfferChildren, -20);
+    indentation(packageChildren, -20);
+    changeColor();
   }
 
  render() {
