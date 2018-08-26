@@ -13,6 +13,10 @@
     user-select: none;
   }
 
+  a {
+    color: $black;
+  }
+
   &__background {
     padding: 30px;
     width: 320px;

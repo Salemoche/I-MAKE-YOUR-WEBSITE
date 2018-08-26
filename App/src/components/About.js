@@ -2,7 +2,7 @@ import React from 'react';
 // import $ from "jquery";
 import CVElement from './CVElement'
 import { indentation, changeColor } from '../scripts/script'
-import AnimatedWrapper from "../animation/AnimatedWrapper";
+import { headerDisappear, headerAppear } from "../animation/pageTransition";
 
 const cvList = [
   {
@@ -90,14 +90,18 @@ class About extends React.Component {
   }
 
   componentDidMount() {
-      console.log('component did mount');
 
-      const pageAboutChildren = document.querySelector('.page__about .page__content__text').childNodes;
-      const pageAboutCareer = document.querySelector('.page__content__career').childNodes;
+    const pageAboutChildren = document.querySelector('.page__about .page__content__text').childNodes;
+    const pageAboutCareer = document.querySelector('.page__content__career').childNodes;
 
-      indentation(pageAboutChildren, 100);
-      indentation(pageAboutCareer, 85);
-      changeColor();
+    indentation(pageAboutChildren, 100);
+    indentation(pageAboutCareer, 85);
+    changeColor();
+
+  }
+
+  componentWillUnmount() {
+
   }
 
   render() {
@@ -107,7 +111,7 @@ class About extends React.Component {
           <h1>about</h1>
           <hr />
           <div className="page__content__photo">
-            <img src={'../images/profile-picture-square--dark.jpg'} />
+            <img src={'../images/profile-picture-square--darker.jpg'} />
           </div>
           <div className="page__content__text">
             <p>Giving a user a top experience is what drives Gabriel. Being an interaction designer for him not only means creating intuitive user interfaces. He wants to use his skills in front-end development, web design and user experience to lead everyone to a wholesome experience throughout. </p>

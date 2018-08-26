@@ -57,7 +57,6 @@ p {
 
 a {
   text-decoration: none;
-  color: $black;
   transition: $transition-time;
 
   &:hover {
@@ -78,8 +77,15 @@ li {
 hr {
   width: 100px;
   border-color: $white;
-  // margin-bottom: 70px;
+  margin-bottom: 70px;
   margin-left: 0px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
 }
 
 .page {
@@ -97,6 +103,7 @@ hr {
     overflow-x: hidden;
     overflow-y: scroll;
     transform: skew(-28deg);
+    padding: 0 20vw;
 
     > * {
       transform: skew(28deg);
@@ -105,7 +112,6 @@ hr {
 
     .page__content__text {
 
-      padding: 0 0 100px 260px;
       margin-bottom: 100px;
 
       p {
@@ -146,30 +152,14 @@ hr {
 
 }
 
-.animated-page-wrapper {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.test {
-  min-height: 100px;
-  min-width: 100px;
-  position: absolute;
-  top: 100px;
-  left: 100px;
-  color: $black;
-}
-
-.switch-wrapper {
-  position: absolute;
-  top: 0;
-}
-
-.switch-wrapper > div {
-  position: absolute;
-}
+// .switch-wrapper {
+//   position: absolute;
+//   top: 0;
+// }
+//
+// .switch-wrapper > div {
+//   position: absolute;
+// }
 
 .fade-enter {
   // opacity: 0;
@@ -180,7 +170,7 @@ hr {
 .fade-enter-active {
   // opacity: 1;
   left: 0;
-  transition: 2s ease-in-out;
+  transition: 1s ease-in-out;
 }
 
 .fade-exit {
@@ -190,7 +180,7 @@ hr {
 .fade-exit-active {
   // opacity: 0;
   left: -140%;
-  transition: 2s ease-in-out;
+  transition: 1s ease-in-out;
 }
 
 

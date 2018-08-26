@@ -94,10 +94,25 @@ class Offer extends React.Component {
     console.log('component did mount');
 
     const pageOfferChildren = document.querySelector('.page__offer').childNodes;
-    const packageChildren = document.querySelector('.package').childNodes;
+    const pageOfferText = document.querySelector('.page__offer .page__content__text').childNodes;
+    const package1Children = $('.package__info').eq(0).children();
+    const package2Children = $('.package__info').eq(1).children();
+    const package3Children = $('.package__info').eq(2).children();
+    const package1Bullets = $('.package__info ul').eq(0).children();
+    const package2Bullets = $('.package__info ul').eq(1).children();
+    const packageInfo = $('.package__info').children();
+    const stepItems = $('.page__content__step__container li');
 
+
+    indentation(package1Children, -50);
+    indentation(package2Children, -50);
+    indentation(package3Children, -50);
+    indentation(package1Bullets, -10);
+    indentation(package1Bullets, -10);
     indentation(pageOfferChildren, -20);
-    indentation(packageChildren, -20);
+    indentation(pageOfferText, -50);
+    indentation(stepItems, -80);
+
     changeColor();
   }
 

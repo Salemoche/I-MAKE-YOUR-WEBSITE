@@ -1,9 +1,11 @@
 import $ from "jquery";
 import { indentation } from '../scripts/script'
 import React from 'react';
-import Button from './Button'
+import Button from './Button';
+import { Link } from 'react-router-dom';
 
 const Package = (props) => {
+
   return (
     <div className="package">
       <div className="package__header">
@@ -39,7 +41,9 @@ const Package = (props) => {
             })
           }
           <li className="package__info__button">
-            <Button name={`choose ${props.name} `} />
+            <Link to="/en/contact" class="hero__color">
+              <Button name={`choose ${props.name} `} />
+            </Link>
           </li>
         </ul>
       </div>

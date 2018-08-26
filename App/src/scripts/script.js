@@ -8,7 +8,7 @@ import $ from "jquery";
 
 const indentation = (element, indent) => {
   for(var i = 0; i < element.length; i++) {
-    element[i].style.marginLeft =  indent * (i+1) + 'px';
+    element[i].style.marginLeft =  indent * (i) + 'px';
   }
 
 }
@@ -63,7 +63,7 @@ function rgbToHsl(r, g, b) {
 
 const brightness = rgbToHsl(rM, gM, bM)[2]; // 1 = bright
 
-const contrastColor = brightness>0.8 ? '#000' : '#fff';
+const contrastColor = brightness>0.8 ? '#111' : '#fff';
 
 const changeColor = () => {
 
@@ -90,6 +90,11 @@ export default $(document).ready( function () {
       function calculateDistance(elem, mouseX, mouseY) {
           return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left+(elem.width()/2)), 2) + Math.pow(mouseY - (elem.offset().top+(elem.height()/2)), 2)));
       }
+
+
+      $('.menu').addClass('menu--closed');
+      $('.darkColor').attr("stop-color", darkColor);
+      $('.brightColor').attr("stop-color", brightColor);
 
       $(document).mousemove(function(e) {
           mX = e.pageX;

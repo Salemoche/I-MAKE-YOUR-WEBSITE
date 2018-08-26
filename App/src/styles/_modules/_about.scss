@@ -11,16 +11,15 @@
     }
 
     h1 {
-      margin-left: 200px;
+      margin-left: 100px;
     }
 
-    hr {
-      margin-left: 200px;
-      margin-bottom: 70px;
+    > hr {
+      margin-left: 57px !important;
     }
 
     .page__content__text {
-      padding: 0 130px;
+      padding: 0;
       margin-bottom: 100px;
 
       p {
@@ -46,10 +45,12 @@
     .page__content__career {
 
       padding: 0 20px;
+      margin-left: -200px;
 
       li {
 
         margin-bottom: 40px;
+        width: 80%;
 
         a {
           font-size: 1.4rem;

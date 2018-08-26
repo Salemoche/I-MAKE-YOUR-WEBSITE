@@ -2,6 +2,8 @@
 
   .page__content {
 
+    padding: 0;
+
     &__showreel {
 
       display: flex;
@@ -68,6 +70,14 @@
         top: 50%;
         transform: translate(-50%, -50%);
         filter: brightness(30%) blur(3px);
+      }
+    }
+
+    &__text {
+      padding: 0 0 100px 180px;
+
+      p {
+        margin-left: -60px;
       }
     }
 

@@ -1,0 +1,63 @@
+.page__contact {
+
+  p {
+    text-align: center;
+    margin-left: -250px;
+  }
+
+  a {
+    font-size: 1.4rem;
+  }
+
+  .contact-form {
+
+    margin-top: 85px;
+    margin-bottom: 40px;
+
+    label {
+      position: absolute;
+      top: -17px;
+      font-size: 1.4rem;
+    }
+
+    input, textarea {
+      background: none;
+      border: none;
+      padding: 10px;
+      font-size: 1.4rem;
+      color: $white;
+      border-bottom: 2px solid $white;
+      font-weight: 400;
+      margin-bottom: 40px;
+    }
+
+    &__names {
+      width: 100%;
+
+      #firstname, #lastname {
+        display: inline-block;
+        width: 45%;
+      }
+
+      #firstname {
+        margin-right: 5%;
+      }
+
+      #lastname {
+        margin-left: 5%;
+      }
+    }
+
+    #email, .message {
+      display: block;
+      width: 100%;
+    }
+
+  }
+
+  .button {
+    transform: skew(-28deg) !important;
+    margin-left: 6vw !important;
+  }
+
+}

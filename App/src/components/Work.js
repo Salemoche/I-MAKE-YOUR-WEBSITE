@@ -1,7 +1,7 @@
 import $ from "jquery";
 import React from 'react';
 import ShowreelItem from './ShowreelItem';
-import { indentation, changeColor } from '../scripts/script'
+import { changeColor } from '../scripts/script'
 
 const showreelItems = {
   salemoche: {
@@ -40,11 +40,7 @@ class Work extends React.Component {
 
 
   componentDidMount() {
-      console.log('component did mount');
 
-      const pageWorkChildren = document.querySelector('.page__work .page__content__text').childNodes;
-
-      indentation(pageWorkChildren, -100);
       changeColor();
   }
 

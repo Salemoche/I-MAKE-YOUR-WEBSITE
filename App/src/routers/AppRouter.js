@@ -13,6 +13,7 @@ import WorkPiece from '../components/WorkPiece';
 import Offer from '../components/Offer';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import PageNotFound from '../components/PageNotFound';
 
 
 import Home from '../components/Home';
@@ -31,7 +32,7 @@ const AppRouter = () => (
           onEntering={console.log(this)}
         >
           <CSSTransition
-            timeout={2000}
+            timeout={1000}
             classNames='fade'
             key={location.location.pathname}
           >
@@ -43,6 +44,7 @@ const AppRouter = () => (
               <Route path="/en/work/:item?" component={WorkPiece} />
               <Route path="/en/offer" component={Offer} />
               <Route path="/en/contact" component={Contact} />
+              <Route component={PageNotFound} />
             </Switch>
         </CSSTransition>
         </TransitionGroup>

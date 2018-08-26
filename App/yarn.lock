@@ -3660,6 +3660,10 @@ jest@^23.4.2:
     import-local "^1.0.0"
     jest-cli "^23.5.0"
 
+jquery-autogrow-textarea@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/jquery-autogrow-textarea/-/jquery-autogrow-textarea-1.2.1.tgz#928eccb0d541470546ae2fb84d98ffe3692f15c5"
+
 jquery@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
@@ -5566,6 +5570,10 @@ schema-utils@^1.0.0:
     ajv "^6.1.0"
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
+
+scrollmagic@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/scrollmagic/-/scrollmagic-2.0.5.tgz#ad7597341c76fb1f4a5bec12968a09223bd08dd9"
 
 scss-tokenizer@^0.2.3:
   version "0.2.3"
