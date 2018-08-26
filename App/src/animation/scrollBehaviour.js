@@ -16,11 +16,16 @@ const scrollAbout = () => {
       delay: 1
     },0.3);
 
+	const textAnim =
+		TweenMax.staggerTo($('.page__content__text p'), 2, {
+			opacity: 0
+		},0.3);
+
 	var scene = new ScrollMagic.Scene({
 										triggerElement: ".trigger-2",
 										triggerHook: "onLeave",
 									})
-									.setTween(".page__content__text", 1, {opacity: 0}) // trigger a TweenMax.to tween
+									.setTween(textAnim) // trigger a TweenMax.to tween
 									.addTo(controller);
 
 	var scene = new ScrollMagic.Scene({

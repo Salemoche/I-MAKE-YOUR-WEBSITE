@@ -1,6 +1,7 @@
 import React from 'react';
 // import $ from "jquery";
 import CVElement from './CVElement'
+import Footer from './Footer'
 import { indentation, changeColor } from '../scripts/script'
 import { headerDisappear, headerAppear } from "../animation/pageTransition";
 
@@ -147,6 +148,7 @@ class About extends React.Component {
           </ul>
           <div className="trigger trigger-1"></div>
           <div className="trigger trigger-2"></div>
+          <Footer />
         </div>
       </div>
     );

@@ -48,7 +48,6 @@ const AppRouter = () => (
             </Switch>
         </CSSTransition>
         </TransitionGroup>
-        <Route component={Footer} />
       </div>
     )}/>
 
