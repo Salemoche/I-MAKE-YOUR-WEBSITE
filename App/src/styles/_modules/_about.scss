@@ -25,6 +25,7 @@
       p {
         width: 70%;
         margin-left: 150px;
+
       }
     }
 
@@ -46,11 +47,13 @@
 
       padding: 0 20px;
       margin-left: -200px;
+      margin-bottom: 20vh;
 
       li {
 
         margin-bottom: 40px;
         width: 80%;
+        opacity: 0;
 
         a {
           font-size: 1.4rem;

@@ -183,6 +183,18 @@ button:focus {
   transition: 1s ease-in-out;
 }
 
+.trigger {
+  position:absolute;
+
+  &-1 {
+    top: 10px;
+  }
+
+  &-2 {
+    top: 200px;
+  }
+}
+
 
 // .page__about {
 //

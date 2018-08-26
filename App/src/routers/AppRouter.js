@@ -29,7 +29,7 @@ const AppRouter = () => (
       <div>
         <Route component={Menu} />
         <TransitionGroup
-          onEntering={console.log(this)}
+          onEntering={console.log('entering')}
         >
           <CSSTransition
             timeout={1000}

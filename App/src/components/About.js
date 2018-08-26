@@ -4,6 +4,11 @@ import CVElement from './CVElement'
 import { indentation, changeColor } from '../scripts/script'
 import { headerDisappear, headerAppear } from "../animation/pageTransition";
 
+import $ from 'jquery';
+import {TweenMax} from 'gsap/TweenMax';
+import {ScrollToPlugin} from "gsap/ScrollToPlugin";
+import { scrollAbout } from '../animation/scrollBehaviour';
+
 const cvList = [
   {
     startTime: '2017+',
@@ -98,6 +103,13 @@ class About extends React.Component {
     indentation(pageAboutCareer, 85);
     changeColor();
 
+    scrollAbout();
+
+    TweenMax.staggerFrom($('.page__content__text p'), 2, {
+      opacity: 0,
+      delay: 1.5
+    },0.7);
+
   }
 
   componentWillUnmount() {
@@ -133,6 +145,8 @@ class About extends React.Component {
               })
             }
           </ul>
+          <div className="trigger trigger-1"></div>
+          <div className="trigger trigger-2"></div>
         </div>
       </div>
     );
