@@ -3,8 +3,8 @@ import React from 'react';
 import ShowreelItem from './ShowreelItem';
 import { indentation, changeColor } from '../scripts/script'
 
-const showreelItems = [
-  {
+const showreelItems = {
+  salemoche: {
     name: 'salemoche',
     id: 'salemoche',
     image: '/images/salemoche.png',
@@ -13,7 +13,7 @@ const showreelItems = [
     description: 'This is the Salemoche Description',
     link: 'http://www.salemoche.ch/cv/html/index.html'
   },
-  {
+  okomo: {
     name: 'okomo',
     id: 'okomo',
     image: '/images/okomo.png',
@@ -22,7 +22,7 @@ const showreelItems = [
     description: '',
     link: 'http://www.okomo.com'
   },
-  {
+  salemochePortfolio: {
     name: 'salemoche portfolio',
     id: 'salemoche-portfolio',
     image: '/images/okomo.png',
@@ -31,7 +31,7 @@ const showreelItems = [
     description: '',
     link: 'http://www.salemoche.ch'
   }
-]
+}
 
 class Work extends React.Component {
   constructor() {
@@ -54,15 +54,15 @@ class Work extends React.Component {
         <div className="page__content page__work__content">
           <div className="page__content__showreel">
             {
-              showreelItems.map((item) => {
+              Object.keys(showreelItems).map((item) => {
                 return (
                   <ShowreelItem
-                    name={item.name}
-                    image={item.image}
-                    order={item.order}
-                    id={item.id}
-                    link={item.link}
-                    subtitle={item.subtitle}
+                    name={showreelItems[item].name}
+                    image={showreelItems[item].image}
+                    order={showreelItems[item].order}
+                    id={showreelItems[item].id}
+                    link={showreelItems[item].link}
+                    subtitle={showreelItems[item].subtitle}
                   />
                 )
               })
