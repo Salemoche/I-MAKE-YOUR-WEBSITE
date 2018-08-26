@@ -18,7 +18,7 @@ class Footer extends React.Component {
         <p className="contrast__color">8004 Zürich</p>
         <p className="contrast__color">Switzerland</p>
       </div>
-      <p className="footer__copyrightcontrast__color">© 2018 I MAKE YOUR WEBSITE</p>
+      <p className="footer__copyright contrast__color">© 2018 I MAKE YOUR WEBSITE</p>
     </footer>
   )
 }

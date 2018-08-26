@@ -1,5 +1,6 @@
 import $ from "jquery";
 import React from 'react';
+import Footer from './Footer'
 import ShowreelItem from './ShowreelItem';
 import { changeColor } from '../scripts/script'
 
@@ -72,6 +73,7 @@ class Work extends React.Component {
               this is my work, i hope you like it
             </p>
           </div>
+          <Footer />
         </div>
       </div>
     )

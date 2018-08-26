@@ -3,6 +3,7 @@ import React from 'react';
 import Package from './Package'
 import Button from './Button'
 import Step from './Step'
+import Footer from './Footer'
 import ServicePackage from './ServicePackage'
 import { indentation, changeColor } from '../scripts/script'
 
@@ -175,6 +176,7 @@ class Offer extends React.Component {
           }
         </div>
 
+        <Footer />
 
       </div>
     </div>
