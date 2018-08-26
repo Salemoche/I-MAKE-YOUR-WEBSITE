@@ -43,7 +43,7 @@
           left: 50%;
           transform: skewX(28deg) translateX(-50%) scale(1.3);
           opacity: 0.4;
-          transition: $transition-time;
+          transition: transform $transition-time;
         }
 
         &:hover {

@@ -125,6 +125,7 @@ class Offer extends React.Component {
                   text2={packageItem.text2}
                   text3={packageItem.text3}
                   bullets={packageItem.bullets}
+                  key={packageItem.name}
                 />
               )
             })
@@ -137,6 +138,7 @@ class Offer extends React.Component {
                 <ServicePackage
                   name={servicePackage.name}
                   price={servicePackage.price}
+                  key={servicePackage.name}
                 />
               )
             })
@@ -151,6 +153,7 @@ class Offer extends React.Component {
                   name={step.name}
                   description={step.description}
                   icon={step.icon}
+                  key={step.name}
                 />
               )
             })

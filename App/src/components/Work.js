@@ -63,6 +63,7 @@ class Work extends React.Component {
                     id={showreelItems[item].id}
                     link={showreelItems[item].link}
                     subtitle={showreelItems[item].subtitle}
+                    key={showreelItems[item].name}
                   />
                 )
               })

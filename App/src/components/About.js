@@ -123,6 +123,7 @@ class About extends React.Component {
                     description={job.description}
                     place={job.place}
                     link={job.link}
+                    key={job.plaace}
                   />
                 )
               })
