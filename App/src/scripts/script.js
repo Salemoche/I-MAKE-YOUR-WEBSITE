@@ -70,6 +70,7 @@ const changeColor = () => {
   $('.hero__background').css('background-color', midColor);
   $('.hero__color').css('color', midColor);
   $('.hero__fill').attr('fill', midColor);
+  $('.hero__border').css('border-color', midColor);
   $('.contrast__color a').css('color', contrastColor);
   $('.contrast__color').css('color', contrastColor);
   $('.darkColor').attr("stop-color", contrastColor);
@@ -104,15 +105,15 @@ export default $(document).ready( function () {
 
           if(distance <= 300) {
             $('.menu').removeClass('menu--closed');
-            $('.darkColor').attr("stop-color", contrastColor);
-            $('.brightColor').attr("stop-color", contrastColor);
+            $('.darkColor.menu-logo').attr("stop-color", contrastColor);
+            $('.brightColor.menu-logo').attr("stop-color", contrastColor);
           } else {
             $('.menu').addClass('menu--closed');
-            $('.darkColor').attr("stop-color", darkColor);
-            $('.brightColor').attr("stop-color", brightColor);
+            $('.darkColor.menu-logo').attr("stop-color", darkColor);
+            $('.brightColor.menu-logo').attr("stop-color", brightColor);
           }
       });
 
 });
 
-export { indentation, changeColor };
+export { indentation, changeColor, midColor };

@@ -20,7 +20,7 @@ class ContactForm extends React.Component {
         <input type="email" placeholder="email" id="email"/>
         {/* <label for="message">Message</label> */}
         <textarea id="message" className="message" placeholder="message" rows="1"></textarea>
-        <Button name="Get in Touch" />
+        <Button name="Say hi!" />
       </form>
     );
   }

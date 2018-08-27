@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch, Link, NavLink } from 'react-router-dom';
-import { AnimatedSwitch } from 'react-router-transition';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+// import $ from 'jquery';
+// import {TweenMax} from 'gsap/TweenMax';
 
 import Menu from '../components/Menu';
 import TestComponent from '../components/TestComponent';
@@ -23,36 +24,58 @@ import Home from '../components/Home';
 //   return childrenArray[0] || null;
 // };
 
-const AppRouter = () => (
-  <BrowserRouter>
-    <Route render={(location) => (
-      <div>
-        <Route component={Menu} />
-        <TransitionGroup
-          onEntering={console.log('entering')}
-        >
-          <CSSTransition
-            timeout={1000}
-            classNames='fade'
-            key={location.location.pathname}
-          >
-            <Switch location={location.location}>
-              <Route path="/" component={Landing} exact={true}/>
-              <Route path="/en/about" component={About}/>
-              <Route path="/test" component={Home}/>
-              <Route path="/en/work" component={Work} exact={true}/>
-              <Route path="/en/work/:item?" component={WorkPiece} />
-              <Route path="/en/offer" component={Offer} />
-              <Route path="/en/contact" component={Contact} />
-              <Route component={PageNotFound} />
-            </Switch>
-        </CSSTransition>
-        </TransitionGroup>
-      </div>
-    )}/>
+class AppRouter extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      location: window.location
+    }
+  }
 
-  </BrowserRouter>
-);
+  dissolve = () => {
+
+    // TweenMax.to($('.page'), 1, {opacity: 0});
+    // console.log('dissolve');
+
+    // this.setState(() => {
+    //   return {location: 'habakuk'}
+    // })
+    // console.log(this.state);
+
+  }
+
+  render() {
+    return (
+      <BrowserRouter>
+        <Route render={(location) => (
+          <div>
+            <Route component={Menu} />
+            <TransitionGroup
+              onEnter={this.dissolve()}
+            >
+              <CSSTransition
+                timeout={1000}
+                classNames='fade'
+                key={location.location.pathname}
+              >
+                <Switch location={location.location}>
+                  <Route path="/" component={Landing} exact={true}/>
+                  <Route path="/en/about" component={About}/>
+                  <Route path="/en/work" component={Work} exact={true}/>
+                  <Route path="/en/work/:item?" component={WorkPiece} />
+                  <Route path="/en/offer" component={Offer} />
+                  <Route path="/en/contact" component={Contact} />
+                  <Route component={PageNotFound} />
+                </Switch>
+            </CSSTransition>
+            </TransitionGroup>
+          </div>
+        )}/>
+      </BrowserRouter>
+    )
+
+  }
+}
 
 export default AppRouter;

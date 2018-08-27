@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form action="/webformmailer.php" method="post">
+    <input type="hidden" name="subject" value="Submission" />
+    <input type="hidden" name="redirect" value="thankyou.html" />
+    Vorname:  <input type="text" name="FirstName" />
+    Nachname:<input type="text" name="LastName" />
+    E-Mail:  <input type="text" name="email" />
+    Kommentare:  <textarea name="comments" cols="40" rows="10">
+    Kommentare hier eingeben.</textarea>
+    <input type="submit" name="submit" value="submit"/>
+    <input type="hidden" name="form_order" value="alpha"/>
+    <input type="hidden" name="form_delivery" value="hourly_digest"/>
+    <input type="hidden" name="form_format" value="html"/>
+    </form>
+  </body>
+</html>

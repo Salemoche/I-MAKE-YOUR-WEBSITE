@@ -9,6 +9,10 @@
     font-size: 1.4rem;
   }
 
+  hr {
+    margin-bottom: 0;
+  }
+
   .contact-form {
 
     margin-top: 85px;
@@ -29,6 +33,10 @@
       border-bottom: 2px solid $white;
       font-weight: 400;
       margin-bottom: 40px;
+    }
+
+    textarea {
+      margin-bottom: 80px;
     }
 
     &__names {

@@ -6,10 +6,14 @@ import Step from './Step'
 import Footer from './Footer'
 import ServicePackage from './ServicePackage'
 import { indentation, changeColor } from '../scripts/script'
+import { Link } from 'react-router-dom';
+
+import {TweenMax} from 'gsap/TweenMax';
+import { scrollOffer } from '../animation/scrollBehaviour';
 
 const packages = [
   {
-    name: 'cheap',
+    name: 'START',
     price: 'from 2999.- CHF',
     text: 'You don’t have a large budget but want to show personality through a website.',
     bullets: [
@@ -18,27 +22,27 @@ const packages = [
       'CMS',
       'Individual design'
     ],
-    buttonText: 'choose cheap'
+    buttonText: 'choose start'
   },
   {
-    name: 'medium',
+    name: 'PREMIUM',
     price: 'from 5999.- CHF',
     text: 'You want a website that clearly differentiates itself from all the others. Custom designs, animations and ',
     text2: 'responsive on whatever device? You have an idea but no clue how to get it on web?',
     text3: '',
     bullets: [
-      'All benefits from cheap',
+      'All benefits from start',
       'Custom tailored design',
       'Free support'
     ],
-    buttonText: 'choose medium'
+    buttonText: 'choose premium'
   },
   {
-    name: 'exclusive',
+    name: 'EXCLUSIVE',
     price: 'on request',
-    text: 'You want a top notch site with custom animations, personal images and illustrations? You want 3D',
-    text2: ' and Virtual Reality? You want a web application, progressive web app or mobile application? You ',
-    text3: 'have heard about that other new technology and want that on your site? I’m interested, Let’s talk about it.',
+    text: 'You want a top notch site with custom animations, personal images and illustrations?',
+    text2: 'You want 3D and Virtual Reality? You want a web application, progressive web app or mobile application?',
+    text3: 'You have heard about that other new technology and want that on your site? I’m interested, Let’s talk about it.',
     bullets: []
   }
 ]
@@ -51,6 +55,10 @@ const servicePackages = [
   {
     name: 'Hosting',
     price: '8.90 CHF / month'
+  },
+  {
+    name: 'SSL Certificate',
+    price: '6 CHF / month'
   },
   {
     name: 'Service',
@@ -108,13 +116,27 @@ class Offer extends React.Component {
     indentation(package1Children, -50);
     indentation(package2Children, -50);
     indentation(package3Children, -50);
-    indentation(package1Bullets, -10);
-    indentation(package1Bullets, -10);
+    indentation(package1Bullets, -20);
+    indentation(package2Bullets, -20);
     indentation(pageOfferChildren, -20);
     indentation(pageOfferText, -50);
     indentation(stepItems, -80);
 
     changeColor();
+
+    TweenMax.staggerFrom('.page__content__text p', 1, {
+      x: "+= 30px",
+      opacity: 0,
+      delay: 0.5
+    }, 0.3)
+
+    TweenMax.from('Button', 1, {
+      x: "+= 30px",
+      opacity: 0,
+      delay: 0.5
+    })
+
+    scrollOffer();
   }
 
  render() {
@@ -125,11 +147,13 @@ class Offer extends React.Component {
         <hr />
         <h2>Let's work together</h2>
         <div className="page__content__text">
-          <p>Presenting your company, your shop or your work to the outside world has never been easier than today. Through a website you are able to show your business worldwide.</p>
-          <p>In our digital age, not having a website is not an option and it is easy to use Wordpress, Wix or Squarespace to get a simple site running</p>
-          <p>In order to transfer your brand identity, however, it is essential to have your individual, personalized website. IMYW can help.</p>
+          <p>Presenting your company, your shop or your work to the outside world has never been easier than today. Through a website you are able to show your business <em className="hero__color">worldwide</em>.</p>
+          <p>In our  <em className="hero__color">digital age</em>, not having a website is not an option and it is easy to use Wordpress, Wix or Squarespace to get a simple site running</p>
+          <p>In order to transfer your brand  <em className="hero__color">identity</em>, however, it is essential to have your  <em className="hero__color">individual</em>,  <em className="hero__color">personalized</em> website. IMYW can help.</p>
         </div>
-        <Button name="request a free consulting" />
+        <Link to="/en/contact" class="hero__color">
+          <Button name="request a free consulting" />
+        </Link>
         <div className="page__content__package__container">
           {
             packages.map((packageItem) => {
@@ -147,7 +171,7 @@ class Offer extends React.Component {
             })
           }
         </div>
-        <div className="page__content__service-package__container">
+        <div className="page__content__service-package__container" id="servicePackage">
           {
             servicePackages.map((servicePackage) => {
               return (
@@ -160,6 +184,8 @@ class Offer extends React.Component {
             })
           }
         </div>
+
+        <h2>In 5 steps to your dream website</h2>
 
         <div className="page__content__step__container">
           {
@@ -177,7 +203,10 @@ class Offer extends React.Component {
         </div>
 
         <Footer />
-
+        <div className="trigger trigger-1"></div>
+        <div className="trigger trigger-2"></div>
+        <div className="trigger trigger-3"></div>
+        <div className="trigger trigger-4"></div>
       </div>
     </div>
   )

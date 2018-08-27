@@ -108,7 +108,13 @@ class About extends React.Component {
 
     TweenMax.staggerFrom($('.page__content__text p'), 2, {
       opacity: 0,
-      delay: 1.5
+      x: "+= 30px",
+      delay: 2
+    },0.7);
+
+    TweenMax.from($('img'), 2, {
+      opacity: 0,
+      delay: 0.5
     },0.7);
 
   }
@@ -146,9 +152,9 @@ class About extends React.Component {
               })
             }
           </ul>
+          <Footer />
           <div className="trigger trigger-1"></div>
           <div className="trigger trigger-2"></div>
-          <Footer />
         </div>
       </div>
     );
