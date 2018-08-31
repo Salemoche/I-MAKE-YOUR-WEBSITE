@@ -1,7 +1,7 @@
 import $ from "jquery";
 import React from 'react';
 import ShowreelItem from './ShowreelItem';
-import { indentation } from '../scripts/indentation';
+import { indentation, changeColor } from '../scripts/script.js';
 import { showreelItems } from './Work';
 
 
@@ -21,56 +21,37 @@ class WorkPiece extends React.Component {
     super(props);
 
     this.state = {
-      id: ""
+
     }
   }
 
-  componentDidMount() {
-    // console.log(this.props.match.params.item);
-    // console.log(this.props.id);
+  componentWillMount() {
 
-    this.setState(() => ({
-      id: this.props.match.params.item
-
-    }));
-
-
-    console.log(this.state);
-
-
-    const pieceID = () => {
-
+    const id = () => {
       for(let i = 0; i< showreelItems.length; i++) {
-        if (props.match.params.item == showreelItems[i].id) {
+        if (this.props.match.params.item == showreelItems[i].name) {
           return i;
         }
       }
     }
 
-    Object.keys(showreelItems).map((item) => {
-      return (
-        <React.Fragment>
-          {
-            showreelItems[item].id == this.state.id ?
-            <ShowreelItem
-              name={showreelItems[item].name}
-              image={showreelItems[item].imageMin}
-              order={showreelItems[item].order}
-              id={showreelItems[item].id}
-              link={showreelItems[item].link}
-              subtitle={showreelItems[item].subtitle}
-              key={showreelItems[item].name}
-            />
-            :
-            <React.Fragment></React.Fragment>
-          }
-        </React.Fragment>
 
-      )
-    })
+    this.setState(() => {
+      return {
+        name: showreelItems[id()].name,
+        id: showreelItems[id()].id,
+        image: showreelItems[id()].image,
+        imageMin: showreelItems[id()].imageMin,
+        order: showreelItems[id()].order,
+        subtitle: showreelItems[id()].subtitle,
+        description: showreelItems[id()].description,
+        link: showreelItems[id()].link
+      }
+    });
+  }
 
-    console.log(showreelItems[pieceID])
-
+  componentDidMount() {
+    changeColor();
   }
 
   render () {
@@ -78,17 +59,17 @@ class WorkPiece extends React.Component {
       <div className="page page__work page__work__piece">
         <div className="page__content page__work__content">
           <div className="page__content__background-image">
-            {/* <img src={.image} /> */}
+            <img src={this.state.image} />
           </div>
           <div className="page__content__text">
-            {/* <h1>{showreelItems[pieceID()].name}, {props.match.params.item}</h1> */}
+            <h1>{this.state.name}</h1>
             <hr />
-            {/* <h2>{showreelItems[pieceID()].subtitle}</h2> */}
+            <h2>{this.state.subtitle}</h2>
             <p>
-              {/* {showreelItems[pieceID()].description} */}
+              {this.state.description}
             </p>
           </div>
-          <a target="_blank" rel="noopener noreferrer" /*href={showreelItems[pieceID()].link}*/>
+          <a target="_blank" rel="noopener noreferrer" href={this.state.link}>
             <div className="button hero__background page__content__button">
               <h6>Visit Website</h6>
             </div>

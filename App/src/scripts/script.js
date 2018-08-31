@@ -1,7 +1,5 @@
 import $ from "jquery";
 
-
-
 //
 // Indentation
 //
@@ -82,38 +80,89 @@ const changeColor = () => {
 // Menu
 //
 
-export default $(document).ready( function () {
+// export default $(document).ready( function () {
+//
+//
+//   var mX, mY, distance,
+//           $element  = $('.menu__content__logo');
+//
+//   function calculateDistance(elem, mouseX, mouseY) {
+//       return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left+(elem.width()/2)), 2) + Math.pow(mouseY - (elem.offset().top+(elem.height()/2)), 2)));
+//   }
+//
+//
+//   // $('.menu').addClass('menu--closed');
+//   $('.darkColor').attr("stop-color", darkColor);
+//   $('.brightColor').attr("stop-color", brightColor);
+//
+//   if(window.location.pathname == "/") {
+//
+//     console.log (window.location.pathname);
+//
+//     $(document).mousemove(function(e) {
+//         mX = e.pageX;
+//         mY = e.pageY;
+//         distance = calculateDistance($element, mX, mY);
+//
+//
+//         if(distance <= 300) {
+//           $('.menu').removeClass('menu--closed');
+//           $('.darkColor.menu-logo').attr("stop-color", contrastColor);
+//           $('.brightColor.menu-logo').attr("stop-color", contrastColor);
+//         } else {
+//           $('.menu').addClass('menu--closed');
+//           $('.darkColor.menu-logo').attr("stop-color", darkColor);
+//           $('.brightColor.menu-logo').attr("stop-color", brightColor);
+//         }
+//     });
+//   }
+//
+//
+// });
 
-
+const hideMenu = () => {
   var mX, mY, distance,
           $element  = $('.menu__content__logo');
 
-      function calculateDistance(elem, mouseX, mouseY) {
-          return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left+(elem.width()/2)), 2) + Math.pow(mouseY - (elem.offset().top+(elem.height()/2)), 2)));
+  function calculateDistance(elem, mouseX, mouseY) {
+      return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left+(elem.width()/2)), 2) + Math.pow(mouseY - (elem.offset().top+(elem.height()/2)), 2)));
+  }
+
+  $('.menu').removeClass('menu--landing');
+  $('.menu').addClass('menu--closed');
+  $('.darkColor').attr("stop-color", darkColor);
+  $('.brightColor').attr("stop-color", brightColor);
+
+  $(document).mousemove(function(e) {
+      mX = e.pageX;
+      mY = e.pageY;
+      distance = calculateDistance($element, mX, mY);
+
+
+      if(distance <= 300) {
+        $('.menu').removeClass('menu--closed');
+        $('.darkColor.menu-logo').attr("stop-color", contrastColor);
+        $('.brightColor.menu-logo').attr("stop-color", contrastColor);
+      } else {
+        $('.menu').addClass('menu--closed');
+        $('.darkColor.menu-logo').attr("stop-color", darkColor);
+        $('.brightColor.menu-logo').attr("stop-color", brightColor);
       }
+  });
+
+  console.log('hide');
+}
+
+const landingMenu = () => {
+  $('.darkColor').attr("stop-color", darkColor);
+  $('.brightColor').attr("stop-color", brightColor);
+  $('menu-logo.darkColor').attr("stop-color", contrastColor);
+  $('menu-logo.brightColor').attr("stop-color", contrastColor);
+  $('.menu').addClass('menu--landing');
+
+}
 
 
-      $('.menu').addClass('menu--closed');
-      $('.darkColor').attr("stop-color", darkColor);
-      $('.brightColor').attr("stop-color", brightColor);
-
-      $(document).mousemove(function(e) {
-          mX = e.pageX;
-          mY = e.pageY;
-          distance = calculateDistance($element, mX, mY);
 
 
-          if(distance <= 300) {
-            $('.menu').removeClass('menu--closed');
-            $('.darkColor.menu-logo').attr("stop-color", contrastColor);
-            $('.brightColor.menu-logo').attr("stop-color", contrastColor);
-          } else {
-            $('.menu').addClass('menu--closed');
-            $('.darkColor.menu-logo').attr("stop-color", darkColor);
-            $('.brightColor.menu-logo').attr("stop-color", brightColor);
-          }
-      });
-
-});
-
-export { indentation, changeColor, midColor };
+export { indentation, changeColor, midColor, hideMenu, landingMenu };

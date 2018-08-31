@@ -69,7 +69,8 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        filter: brightness(30%) blur(3px);
+        filter: brightness(30%);
+        // filter: brightness(30%) blur(3px);
       }
     }
 

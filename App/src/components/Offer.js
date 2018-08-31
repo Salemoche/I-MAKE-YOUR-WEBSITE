@@ -5,7 +5,7 @@ import Button from './Button'
 import Step from './Step'
 import Footer from './Footer'
 import ServicePackage from './ServicePackage'
-import { indentation, changeColor } from '../scripts/script'
+import { indentation, changeColor, hideMenu } from '../scripts/script'
 import { Link } from 'react-router-dom';
 
 import {TweenMax} from 'gsap/TweenMax';
@@ -123,6 +123,7 @@ class Offer extends React.Component {
     indentation(stepItems, -80);
 
     changeColor();
+    hideMenu();
 
     TweenMax.staggerFrom('.page__content__text p', 1, {
       x: "+= 30px",

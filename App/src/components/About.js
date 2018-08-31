@@ -2,7 +2,7 @@ import React from 'react';
 // import $ from "jquery";
 import CVElement from './CVElement'
 import Footer from './Footer'
-import { indentation, changeColor } from '../scripts/script'
+import { indentation, changeColor, hideMenu } from '../scripts/script'
 import { headerDisappear, headerAppear } from "../animation/pageTransition";
 
 import $ from 'jquery';
@@ -103,6 +103,7 @@ class About extends React.Component {
     indentation(pageAboutChildren, 100);
     indentation(pageAboutCareer, 85);
     changeColor();
+    hideMenu();
 
     scrollAbout();
 

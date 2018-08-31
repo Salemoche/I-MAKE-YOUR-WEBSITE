@@ -3,42 +3,44 @@ import React from 'react';
 import Footer from './Footer'
 import ScrollButton from './ScrollButton'
 import ShowreelItem from './ShowreelItem';
-import { changeColor, midColor } from '../scripts/script'
+import { changeColor, midColor, hideMenu } from '../scripts/script'
 
 import {TweenMax} from 'gsap/TweenMax';
 
-const showreelItems = {
-  salemoche: {
-    name: 'salemoche',
-    id: 'salemoche',
-    image: '/images/salemoche.png',
-    imageMin: '/images/salemoche-min.png',
-    order: '1',
-    subtitle: 'interactive cv',
-    description: 'This is the Salemoche Description',
-    link: 'http://www.salemoche.ch/cv/html/index.html'
-  },
-  okomo: {
-    name: 'okomo',
-    id: 'okomo',
-    image: '/images/okomo.png',
-    imageMin: '/images/okomo-min.png',
-    order: '2',
-    subtitle: 'an interactive cv',
-    description: '',
-    link: 'http://www.okomo.com'
-  },
-  salemochePortfolio: {
-    name: 'salemoche portfolio',
-    id: 'salemoche-portfolio',
-    image: '/images/okomo.png',
-    imageMin: '/images/okomo-min.png',
-    order: '3',
-    subtitle: 'an interactive cv',
-    description: '',
-    link: 'http://www.salemoche.ch'
-  }
+const salemoche = {
+  name: 'salemoche',
+  id: 'salemoche',
+  image: '/images/salemoche.png',
+  imageMin: '/images/salemoche-min.png',
+  order: '1',
+  subtitle: 'interactive cv',
+  description: 'This is the Salemoche Description',
+  link: 'http://www.salemoche.ch/cv/html/index.html'
 }
+const okomo = {
+  name: 'okomo',
+  id: 'okomo',
+  image: '/images/okomo.png',
+  imageMin: '/images/okomo-min.png',
+  order: '2',
+  subtitle: 'an interactive cv',
+  description: '',
+  link: 'http://www.okomo.com'
+}
+
+const salemochePortfolio = {
+  name: 'salemoche portfolio',
+  id: 'salemoche-portfolio',
+  image: '/images/okomo.png',
+  imageMin: '/images/okomo-min.png',
+  order: '3',
+  subtitle: 'an interactive cv',
+  description: '',
+  link: 'http://www.salemoche.ch'
+}
+
+const showreelItems = [ salemoche, okomo, salemochePortfolio ];
+
 
 class Work extends React.Component {
   constructor() {
@@ -82,6 +84,7 @@ class Work extends React.Component {
   componentDidMount() {
 
       changeColor();
+      hideMenu();
       // $('.page__content').scrollTo($('.page__content').height - window.innerHeight)
 
       TweenMax.staggerFrom('.showreel__item', 1, {

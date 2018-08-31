@@ -11,15 +11,15 @@ class ContactForm extends React.Component {
 
   render() {
     return (
-      <form className="contact-form">
+      <form className="contact-form" action="https://formspree.io/gabriel@inter-action.design" method="POST">
         <div className="contact-form__names">
-          <input type="text" placeholder="Firstname" id="firstname"/>
-          <input type="text" placeholder="Lastname" id="lastname"/>
+          <input type="text" placeholder="Firstname" name="Firstname" id="firstname"/>
+          <input type="text" placeholder="Lastname" name="Lastname" id="lastname"/>
         </div>
         {/* <label for="email">Email</label> */}
-        <input type="email" placeholder="email" id="email"/>
+        <input type="email" placeholder="email" name="email" id="email"/>
         {/* <label for="message">Message</label> */}
-        <textarea id="message" className="message" placeholder="message" rows="1"></textarea>
+        <textarea id="message" className="message" name="message" placeholder="message" rows="1"></textarea>
         <Button name="Say hi!" />
       </form>
     );

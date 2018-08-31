@@ -47,10 +47,11 @@
         margin-bottom: 10px;
         font-size: 2.2rem;
         font-family: 'Playfair Display';
-        transition: $transition-time;
+        transition: opacity $transition-time;
+        margin-left: 27px;
 
         a {
-          transition: $transition-time;
+          transition: opacity $transition-time;
 
           &:hover {
             font-weight: 900;
@@ -69,6 +70,18 @@
     .menu__content__list li {
       opacity: 0;
     }
+  }
+
+  &--landing {
+    .menu__background {
+      max-width: 320px;
+    }
+
+    .menu__content__list li {
+      opacity: 1;
+    }
+
+
   }
 
   .is-active {
