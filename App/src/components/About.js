@@ -2,7 +2,7 @@ import React from 'react';
 // import $ from "jquery";
 import CVElement from './CVElement'
 import Footer from './Footer'
-import { indentation, changeColor, hideMenu } from '../scripts/script'
+import { indentation, indentationRegular, changeColor, hideMenu, menuClick } from '../scripts/script'
 import { headerDisappear, headerAppear } from "../animation/pageTransition";
 
 import $ from 'jquery';
@@ -56,40 +56,6 @@ const cvList = [
 ]
 
 
-// const About= () => {
-//   return (
-//     <div className="page page__about">
-//       <div className="page__content page__about__content">
-//         <h1>about</h1>
-//         <hr />
-//         <div className="page__content__photo">
-//           <img src={'../images/profile-picture-square--dark.jpg'} />
-//         </div>
-//         <div className="page__content__text">
-//           <p>Giving a user a top experience is what drives Gabriel. Being an interaction designer for him not only means creating intuitive user interfaces. He wants to use his skills in front-end development, web design and user experience to lead everyone to a wholesome experience throughout. </p>
-//           <p>Having studied at the Zurich University of the Arts and the Royal Academy of Art in The Hague, Gabriel enjoys bringing culture and design together. He loves travelling and going abroad to enrich himself and his design work with what other cultures have to offer.</p>
-//         </div>
-//         <ul className="page__content__career">
-//           {
-//             cvList.map( (job) => {
-//               return (
-//                 <CVElement
-//                   startTime={job.startTime}
-//                   endTime={job.endTime}
-//                   description={job.description}
-//                   place={job.place}
-//                   link={job.link}
-//                 />
-//               )
-//             })
-//           }
-//         </ul>
-//       </div>
-//     </div>
-//   )
-// }
-
-
 class About extends React.Component {
   constructor() {
     super();
@@ -99,11 +65,23 @@ class About extends React.Component {
 
     const pageAboutChildren = document.querySelector('.page__about .page__content__text').childNodes;
     const pageAboutCareer = document.querySelector('.page__content__career').childNodes;
+    const pageAboutFooter = document.querySelector('.footer__info').childNodes;
 
-    indentation(pageAboutChildren, 100);
-    indentation(pageAboutCareer, 85);
+    console.log(window.innerWidth);
+
+    if(window.innerWidth > 375) {
+      indentation(pageAboutChildren, 100);
+      indentationRegular(pageAboutCareer, 85);
+      hideMenu();
+    } else {
+      indentationRegular(pageAboutChildren, 80);
+      indentationRegular(pageAboutCareer, 85);
+      indentationRegular(pageAboutFooter, 15);
+    }
+
+    menuClick();
+
     changeColor();
-    hideMenu();
 
     scrollAbout();
 
@@ -134,8 +112,10 @@ class About extends React.Component {
             <img src={'../images/profile-picture-square--darker.jpg'} />
           </div>
           <div className="page__content__text">
-            <p>Giving a user a top experience is what drives Gabriel. Being an interaction designer for him not only means creating intuitive user interfaces. He wants to use his skills in front-end development, web design and user experience to lead everyone to a wholesome experience throughout. </p>
-            <p>Having studied at the Zurich University of the Arts and the Royal Academy of Art in The Hague, Gabriel enjoys bringing culture and design together. He loves travelling and going abroad to enrich himself and his design work with what other cultures have to offer.</p>
+            <p>Giving a user a top experience is what drives Gabriel. Being an interaction designer for him not only means creating intuitive user interfaces. He wants to use his skills in front-end development,</p>
+            <p> web design and user experience to lead everyone to a wholesome experience throughout. </p>
+            <p>Having studied at the Zurich University of the Arts and the Royal Academy of Art in The Hague, Gabriel enjoys bringing culture and design together. </p>
+            <p> He loves travelling and going abroad to enrich himself and his design work with what other cultures have to offer.</p>
           </div>
           <ul className="page__content__career">
             {

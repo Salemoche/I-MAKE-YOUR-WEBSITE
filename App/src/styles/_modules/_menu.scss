@@ -87,4 +87,28 @@
   .is-active {
     font-weight: 900;
   }
+
+  @media screen and (max-width: $breakpoint-small) {
+
+    // right: 60vw;
+
+    .menu__content {
+      right: 170px;
+    }
+
+
+    .menu__content__logo {
+      transform: scale(0.6);
+      margin-left: 0;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-extra-small) {
+
+    // right: 150px;
+
+    .menu__content__logo {
+      transform: scale(0.6);
+    }
+  }
 }

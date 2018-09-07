@@ -16,7 +16,11 @@ class Contact extends React.Component {
 
     const contactFormItems = document.querySelector('.contact-form').childNodes;
 
-    indentation(contactFormItems, -50);
+
+    if(window.innerWidth > 375) {
+      indentation(contactFormItems, -50);
+    }
+
     changeColor();
 
     TweenMax.staggerFrom('.contact-form *', 1, {

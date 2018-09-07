@@ -112,15 +112,17 @@ class Offer extends React.Component {
     const packageInfo = $('.package__info').children();
     const stepItems = $('.page__content__step__container li');
 
+    if(window.innerWidth > 375) {
+      indentation(package1Children, -50);
+      indentation(package2Children, -50);
+      indentation(package3Children, -50);
+      indentation(package1Bullets, -20);
+      indentation(package2Bullets, -20);
+      indentation(pageOfferChildren, -20);
+      indentation(pageOfferText, -50);
+      indentation(stepItems, -80);
+    }
 
-    indentation(package1Children, -50);
-    indentation(package2Children, -50);
-    indentation(package3Children, -50);
-    indentation(package1Bullets, -20);
-    indentation(package2Bullets, -20);
-    indentation(pageOfferChildren, -20);
-    indentation(pageOfferText, -50);
-    indentation(stepItems, -80);
 
     changeColor();
     hideMenu();

@@ -15,7 +15,8 @@
     }
 
     > hr {
-      margin-left: 57px !important;
+      // margin-left: 57px !important;
+      margin-left: 57px;
     }
 
     .page__content__text {
@@ -66,6 +67,37 @@
         }
 
       }
+    }
+
+    @media screen and (max-width: $breakpoint-small) {
+
+      width: 450px;
+      height: 100vh;
+      padding: 0 5vw;
+      left: 0px;
+
+      h1 {
+        margin-left: 40%;
+      }
+
+      hr {
+        margin-left: 30%;
+      }
+
+      .page__content__career {
+        padding: 0 120px;
+      }
+
+      .page__content__text p {
+        margin-left: 0;
+      }
+
+
+    }
+
+    @media screen and (max-width: $breakpoint-extra-small) {
+
+      left: -60px;
     }
 
   }

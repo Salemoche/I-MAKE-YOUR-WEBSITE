@@ -9,4 +9,13 @@
     top: 50%;
     transform: translate(-50%, -50%);
   }
+
+  @media screen and (max-width: $breakpoint-small) {
+
+    width: 130vw;
+
+    .landing__svg {
+      transform: translate(-49.3%, -50%) scale(0.65);
+    }
+  }
 }

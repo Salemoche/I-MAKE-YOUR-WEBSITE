@@ -10,12 +10,16 @@ var controller = new ScrollMagic.Controller();
 
 const scrollAbout = () => {
 
+	if(window.innerWidth > 375) {
+		$('.trigger-2').css('top', '300px');
+	}
+
 	const listAnim =
-    TweenMax.staggerTo($('.page__content__career li'), 1, {
+		TweenMax.staggerTo($('.page__content__career li'), 1, {
 			x: "-= 30px",
-      opacity: 1,
-      delay: 1
-    },0.3);
+			opacity: 1,
+			delay: 1
+		},0.3);
 
 	const textAnim =
 		TweenMax.staggerTo($('.page__content__text p'), 2, {
@@ -46,6 +50,8 @@ const scrollAbout = () => {
 									.setTween(".page__content__photo",  {top: '700px', ease: Power0.easeNone}) // trigger a TweenMax.to tween
 									// .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
 									.addTo(controller);
+
+
 };
 
 const scrollOffer = () => {
@@ -100,5 +106,22 @@ const scrollOffer = () => {
 									.addTo(controller);
 }
 
+const scrollWork = () => {
+    // $([document.documentElement, document.body]).animate({
+    //     scrollTop: $("#elementtoScrollToID").offset().top
+    // }, 2000);
 
-export { scrollAbout, scrollOffer };
+
+		$(".page__work .page__content").scrollTop( $(document).height() - $('footer').innerHeight() - $(window).innerHeight() );
+
+		console.log($(".page__work .page__content").scrollHeight);
+		console.log($('footer').innerHeight());
+		console.log($(window).height() );
+		console.log($(document).height() );
+
+		// $(".page__work .page__content").scrollTo(0,document.body.scrollHeight);
+
+}
+
+
+export { scrollAbout, scrollOffer, scrollWork };

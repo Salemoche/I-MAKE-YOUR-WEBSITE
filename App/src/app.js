@@ -8,7 +8,7 @@ import 'normalize.css/normalize.css';
 import './styles/main.scss';
 import './animation/pageTransition.js';
 import './animation/scrollBehaviour.js';
-import Scripts from './scripts/script';
+import './scripts/script';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

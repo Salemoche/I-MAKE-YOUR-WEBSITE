@@ -3,7 +3,8 @@ import React from 'react';
 import Footer from './Footer'
 import ScrollButton from './ScrollButton'
 import ShowreelItem from './ShowreelItem';
-import { changeColor, midColor, hideMenu } from '../scripts/script'
+import { changeColor, midColor, hideMenu, menuClick } from '../scripts/script'
+import { scrollWork } from '../animation/scrollBehaviour';
 
 import {TweenMax} from 'gsap/TweenMax';
 
@@ -85,7 +86,10 @@ class Work extends React.Component {
 
       changeColor();
       hideMenu();
-      // $('.page__content').scrollTo($('.page__content').height - window.innerHeight)
+      menuClick();
+
+      scrollWork();
+
 
       TweenMax.staggerFrom('.showreel__item', 1, {
         opacity: 0,

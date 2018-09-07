@@ -20,7 +20,7 @@ class Landing extends React.Component {
         {/* <div className="menu__background hero__background" style="background: #555;transform: skewX(28deg)"></div> */}
         <div className="menu__background hero__background" style={menuStyle}></div>
         <div className="menu__content">
-          <NavLink to="/" activeClassName="is-active" exact={true} >
+          {/* <NavLink to="/" activeClassName="is-active" exact={true} > */}
             <div className="menu__content__logo">
               <svg width="160" height="78" xmlns="http://www.w3.org/2000/svg">
               <defs>
@@ -34,7 +34,7 @@ class Landing extends React.Component {
               </g>
             </svg>
             </div>
-          </NavLink>
+          {/* </NavLink> */}
           <ul className="menu__content__list">
             <li className="contrast__color"><NavLink to="/en/about" activeClassName="is-active" onClick={() => {}}>about</NavLink></li>
             <li className="contrast__color"><NavLink to="/en/work" activeClassName="is-active">work</NavLink></li>

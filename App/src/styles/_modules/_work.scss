@@ -89,6 +89,20 @@
       bottom: 40px;
       left: 50%;
     }
+
+
+    @media screen and (max-width: $breakpoint-small) {
+
+      .page__content__text {
+        padding: 0 0px 100px 140px;
+      }
+
+      .page__content__showreel {
+        .showreel__item {
+          width: 100%;
+        }
+      }
+    }
   }
 
 

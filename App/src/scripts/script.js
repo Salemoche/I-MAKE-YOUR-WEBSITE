@@ -5,6 +5,17 @@ import $ from "jquery";
 //
 
 const indentation = (element, indent) => {
+  for(var i = 0; i < element.length; i+=2) {
+    element[i].style.marginLeft =  indent * (i) + 'px';
+  }
+
+  for(var i = 1; i < element.length; i+=2) {
+    element[i].style.marginLeft =  indent * (i-1) + 'px';
+  }
+
+}
+
+const indentationRegular = (element, indent) => {
   for(var i = 0; i < element.length; i++) {
     element[i].style.marginLeft =  indent * (i) + 'px';
   }
@@ -71,54 +82,28 @@ const changeColor = () => {
   $('.hero__border').css('border-color', midColor);
   $('.contrast__color a').css('color', contrastColor);
   $('.contrast__color').css('color', contrastColor);
-  $('.darkColor').attr("stop-color", contrastColor);
-  $('.brightColor').attr("stop-color", contrastColor);
+
+  $('.darkColor').attr("stop-color", darkColor);
+  $('.brightColor').attr("stop-color", brightColor);
+
+  // if(window.innerWidth > 375) {
+  //   $('.darkColor').attr("stop-color", contrastColor);
+  //   $('.brightColor').attr("stop-color", contrastColor);
+  // } else {
+  //   $('.darkColor').attr("stop-color", darkColor);
+  //   $('.brightColor').attr("stop-color", brightColor);
+  // }
+
+
+
+
+  console.log('change color');
 }
 
 
 //
 // Menu
 //
-
-// export default $(document).ready( function () {
-//
-//
-//   var mX, mY, distance,
-//           $element  = $('.menu__content__logo');
-//
-//   function calculateDistance(elem, mouseX, mouseY) {
-//       return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left+(elem.width()/2)), 2) + Math.pow(mouseY - (elem.offset().top+(elem.height()/2)), 2)));
-//   }
-//
-//
-//   // $('.menu').addClass('menu--closed');
-//   $('.darkColor').attr("stop-color", darkColor);
-//   $('.brightColor').attr("stop-color", brightColor);
-//
-//   if(window.location.pathname == "/") {
-//
-//     console.log (window.location.pathname);
-//
-//     $(document).mousemove(function(e) {
-//         mX = e.pageX;
-//         mY = e.pageY;
-//         distance = calculateDistance($element, mX, mY);
-//
-//
-//         if(distance <= 300) {
-//           $('.menu').removeClass('menu--closed');
-//           $('.darkColor.menu-logo').attr("stop-color", contrastColor);
-//           $('.brightColor.menu-logo').attr("stop-color", contrastColor);
-//         } else {
-//           $('.menu').addClass('menu--closed');
-//           $('.darkColor.menu-logo').attr("stop-color", darkColor);
-//           $('.brightColor.menu-logo').attr("stop-color", brightColor);
-//         }
-//     });
-//   }
-//
-//
-// });
 
 const hideMenu = () => {
   var mX, mY, distance,
@@ -133,36 +118,67 @@ const hideMenu = () => {
   $('.darkColor').attr("stop-color", darkColor);
   $('.brightColor').attr("stop-color", brightColor);
 
-  $(document).mousemove(function(e) {
-      mX = e.pageX;
-      mY = e.pageY;
-      distance = calculateDistance($element, mX, mY);
+  if(window.innerWidth > 375) {
+
+    console.log('hover');
+
+    $(document).mousemove(function(e) {
+        mX = e.pageX;
+        mY = e.pageY;
+        distance = calculateDistance($element, mX, mY);
 
 
-      if(distance <= 300) {
-        $('.menu').removeClass('menu--closed');
-        $('.darkColor.menu-logo').attr("stop-color", contrastColor);
-        $('.brightColor.menu-logo').attr("stop-color", contrastColor);
-      } else {
-        $('.menu').addClass('menu--closed');
-        $('.darkColor.menu-logo').attr("stop-color", darkColor);
-        $('.brightColor.menu-logo').attr("stop-color", brightColor);
-      }
-  });
+        if(distance <= 300) {
+          $('.menu').removeClass('menu--closed');
+          $('.darkColor.menu-logo').attr("stop-color", contrastColor);
+          $('.brightColor.menu-logo').attr("stop-color", contrastColor);
+        } else {
+          $('.menu').addClass('menu--closed');
+          $('.darkColor.menu-logo').attr("stop-color", darkColor);
+          $('.brightColor.menu-logo').attr("stop-color", brightColor);
+        }
 
-  console.log('hide');
+    });
+  }
+
 }
+
+//
+// Open / Close Menu
+//
+
+const menuClick = () => {
+  let open = false
+
+  $('.menu__content__logo').click(() => {
+    $('.menu').toggleClass('menu--closed');
+    open = !open;
+
+    if (open) {
+      $('.darkColor.menu-logo').attr("stop-color", contrastColor);
+      $('.brightColor.menu-logo').attr("stop-color", contrastColor);
+    } else {
+      $('.darkColor.menu-logo').attr("stop-color", darkColor);
+      $('.brightColor.menu-logo').attr("stop-color", brightColor);
+    }
+  });
+}
+
+console.log('hi');
+
 
 const landingMenu = () => {
   $('.darkColor').attr("stop-color", darkColor);
   $('.brightColor').attr("stop-color", brightColor);
   $('menu-logo.darkColor').attr("stop-color", contrastColor);
   $('menu-logo.brightColor').attr("stop-color", contrastColor);
+
   $('.menu').addClass('menu--landing');
+
 
 }
 
 
 
 
-export { indentation, changeColor, midColor, hideMenu, landingMenu };
+export { indentation, indentationRegular, changeColor, midColor, hideMenu, landingMenu, menuClick };

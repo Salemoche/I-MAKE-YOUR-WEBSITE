@@ -25,6 +25,7 @@
     margin-bottom: 50vh;
     width: 100vw;
     margin-left: -20vw;
+    flex-wrap: wrap;
 
     .package {
       width: 33.3%;
@@ -170,5 +171,16 @@
 
       }
     }
+  }
+
+  @media screen and (max-width: $breakpoint-small) {
+
+    .page__content__package__container {
+
+      .package {
+        width: 100%;
+      }
+    }
+
   }
 }
