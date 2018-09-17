@@ -41,6 +41,7 @@ const bB = b<255 ? b + 100 : 255;
 const brightColor = 'rgb(' + rB + ',' + gB + ',' + bB + ')';
 const midColor = 'rgb(' + rM + ',' + gM + ',' + bM + ')';
 const darkColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+const compColor = 'rgb(' + (255 - rM) + ',' + (255 - gM) + ',' + (255 - bM) + ')';
 
 
 function rgbToHsl(r, g, b) {
@@ -72,7 +73,9 @@ function rgbToHsl(r, g, b) {
 
 const brightness = rgbToHsl(rM, gM, bM)[2]; // 1 = bright
 
-const contrastColor = brightness>0.8 ? '#111' : '#fff';
+let contrastColor = brightness>0.8 ? '#111' : '#fff';
+contrastColor = brightness>0.8 ? 'rgb(' + (rM-150) + ',' + (gM-150) + ',' + (bM-150) + ')' : 'rgb(' + (rM+150) + ',' + (gM+150) + ',' + (bM+150) + ')';
+// contrastColor = compColor;
 
 const changeColor = () => {
 
@@ -82,6 +85,8 @@ const changeColor = () => {
   $('.hero__border').css('border-color', midColor);
   $('.contrast__color a').css('color', contrastColor);
   $('.contrast__color').css('color', contrastColor);
+  $('.complementary__color').css('color', compColor);
+
 
   $('.darkColor').attr("stop-color", darkColor);
   $('.brightColor').attr("stop-color", brightColor);
@@ -170,8 +175,8 @@ console.log('hi');
 const landingMenu = () => {
   $('.darkColor').attr("stop-color", darkColor);
   $('.brightColor').attr("stop-color", brightColor);
-  $('menu-logo.darkColor').attr("stop-color", contrastColor);
-  $('menu-logo.brightColor').attr("stop-color", contrastColor);
+  $('.menu .darkColor').attr("stop-color", contrastColor);
+  $('.menu .brightColor').attr("stop-color", contrastColor);
 
   $('.menu').addClass('menu--landing');
 

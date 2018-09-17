@@ -52,8 +52,18 @@
           margin-bottom: 40px;
         }
 
-        &__image svg{
-          margin-left: 110px;
+        &__image {
+
+          height: 250px;
+          padding-left: 40px;
+
+          svg {
+            transform: scale(0.7);
+          }
+
+          // &:first-of-type {
+          //   padding-left: 70px;
+          // }
         }
       }
 
@@ -95,7 +105,7 @@
           font-size: 1.4rem;
           position: absolute;
           bottom: 30px;
-          left: -50%;
+          left: -40%;
 
           .button {
             padding: 13px;
@@ -175,10 +185,59 @@
 
   @media screen and (max-width: $breakpoint-small) {
 
+    .page__content__text {
+      margin-left: 100px;
+      width: 90%;
+    }
+
+    .page__content__service-package__container h3 {
+      width: 50%;
+      padding-left: 40px;
+    }
+
+    .page__content__step__container {
+      padding: 0;
+      margin-left: 450px;
+    }
+
+    .package__header {
+
+      &__image {
+        svg {
+          margin-left: 40px;
+        }
+      }
+
+      h3 {
+        margin-left: 60px;
+      }
+
+      h4 {
+        margin-left: -80px;
+      }
+
+      h5 {
+        margin-left: -130px;
+      }
+
+    }
+
+
     .page__content__package__container {
+
+      margin-left: 0;
 
       .package {
         width: 100%;
+      }
+
+      .package__info {
+        width: 100vw;
+        margin-left: 20px;
+      }
+
+      .package__info__button .button {
+        margin-left: 70px;
       }
     }
 

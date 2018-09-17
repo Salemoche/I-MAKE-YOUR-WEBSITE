@@ -221,6 +221,12 @@ footer {
 
   a {
     font-size: 1.4rem;
+    padding-bottom: 2px;
+    // border-bottom: 1px solid white;
+
+    &:hover {
+          border-bottom: none;
+    }
   }
 
   .footer__info {
@@ -241,14 +247,6 @@ footer {
     text-align: center;
     margin-left: 40vw;
     padding-bottom: 30px;
-  }
-}
-
-.page__work footer{
-  margin-left: 0;
-
-  p {
-    margin-left: 70px;
   }
 }
 
@@ -337,7 +335,14 @@ footer {
 
   h1 {
     font-size: 5rem;
+    margin-top: 100px;
   }
+
+  hr {
+    margin-bottom: 20px;
+  }
+
+
 
   .page {
     height: 100vh;
@@ -350,6 +355,7 @@ footer {
       width: 500px;
       left: -60px;
       padding: 0 35vw;
+      padding: 0 20vw;
       position: fixed;
     }
   }
@@ -367,6 +373,7 @@ footer {
 
     a {
       font-size: 1.2rem;
+
     }
   }
 }

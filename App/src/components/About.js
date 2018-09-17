@@ -72,6 +72,7 @@ class About extends React.Component {
     if(window.innerWidth > 375) {
       indentation(pageAboutChildren, 100);
       indentationRegular(pageAboutCareer, 85);
+      indentationRegular(pageAboutFooter, 15);
       hideMenu();
     } else {
       indentationRegular(pageAboutChildren, 80);

@@ -89,6 +89,11 @@ class Work extends React.Component {
       menuClick();
 
       scrollWork();
+      
+
+      $('.page').click(() => {
+        scrollWork();
+      });
 
 
       TweenMax.staggerFrom('.showreel__item', 1, {

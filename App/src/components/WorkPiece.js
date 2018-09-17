@@ -1,7 +1,7 @@
 import $ from "jquery";
 import React from 'react';
 import ShowreelItem from './ShowreelItem';
-import { indentation, changeColor } from '../scripts/script.js';
+import { indentation, changeColor, menuClick  } from '../scripts/script.js';
 import { showreelItems } from './Work';
 
 
@@ -26,6 +26,8 @@ class WorkPiece extends React.Component {
   }
 
   componentWillMount() {
+
+    menuClick()
 
     const id = () => {
       for(let i = 0; i< showreelItems.length; i++) {

@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import '../scripts/indentation.js';
 import { changeColor } from '../scripts/script';
+import $ from "jquery";
 
 const menuStyle = {
   transform: 'skewX(28deg)'
@@ -12,6 +13,8 @@ class Landing extends React.Component {
 
   componentWillMount() {
     changeColor();
+    $('li a').mouseenter(() => {$(this).addClass('complementary__color')});
+    $('li a').mouseleave(() => {$(this).removeClass('complementary__color')});
   }
 
   render () {
@@ -36,10 +39,10 @@ class Landing extends React.Component {
             </div>
           {/* </NavLink> */}
           <ul className="menu__content__list">
-            <li className="contrast__color"><NavLink to="/en/about" activeClassName="is-active" onClick={() => {}}>about</NavLink></li>
-            <li className="contrast__color"><NavLink to="/en/work" activeClassName="is-active">work</NavLink></li>
-            <li className="contrast__color"><NavLink to="/en/offer" activeClassName="is-active">offer</NavLink></li>
-            <li className="contrast__color"><NavLink to="/en/contact" activeClassName="is-active">contact</NavLink></li>
+            <li className="contrast__color"><NavLink to="/en/about" activeClassName="complementary__color" onClick={() => {}}>about</NavLink></li>
+            <li className="contrast__color"><NavLink to="/en/work" activeClassName="complementary__color">work</NavLink></li>
+            <li className="contrast__color"><NavLink to="/en/offer" activeClassName="complementary__color">offer</NavLink></li>
+            <li className="contrast__color"><NavLink to="/en/contact" activeClassName="complementary__color">contact</NavLink></li>
           </ul>
         </div>
       </div>

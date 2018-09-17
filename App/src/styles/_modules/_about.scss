@@ -69,6 +69,10 @@
       }
     }
 
+    footer {
+      padding: 0 300px;
+    }
+
     @media screen and (max-width: $breakpoint-small) {
 
       width: 450px;

@@ -1,7 +1,7 @@
 import React from 'react';
 // import $ from "jquery";
 import ContactForm from './ContactForm'
-import { indentation, changeColor } from '../scripts/script'
+import { indentation, indentationRegular, changeColor } from '../scripts/script'
 import { headerDisappear, headerAppear } from "../animation/pageTransition";
 import {TweenMax} from 'gsap/TweenMax';
 
@@ -18,7 +18,7 @@ class Contact extends React.Component {
 
 
     if(window.innerWidth > 375) {
-      indentation(contactFormItems, -50);
+      indentationRegular(contactFormItems, -50);
     }
 
     changeColor();

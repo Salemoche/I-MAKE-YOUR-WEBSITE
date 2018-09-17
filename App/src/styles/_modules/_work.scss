@@ -90,8 +90,20 @@
       left: 50%;
     }
 
+    footer {
+      margin-left: 0;
+
+      p {
+        margin-left: 70px;
+      }
+    }
+
 
     @media screen and (max-width: $breakpoint-small) {
+
+      .button {
+        width: 180px;
+      }
 
       .page__content__text {
         padding: 0 0px 100px 140px;
@@ -101,6 +113,10 @@
         .showreel__item {
           width: 100%;
         }
+      }
+
+      footer p {
+        margin-left: 0;
       }
     }
   }

@@ -105,11 +105,12 @@ $(document).ready(() => {
     })
 
   $('#i').mouseenter(() => {
+    tI.timeScale(2);
     tI.reverse();
   })
 
   $('#i').mouseleave(() => {
-    tI.reverse();
+    tI.play();
   })
 
 
@@ -121,9 +122,12 @@ $(document).ready(() => {
     })
 
   $('#m').mouseenter(() => {
+    tM.timeScale(2);
     tM.reverse();
   })
-  // tM.play();
+  $('#m').mouseleave(() => {
+    tM.play();
+  })
 
 
   tY.to('#y-1', 1, {
@@ -145,7 +149,12 @@ $(document).ready(() => {
 
 
   $('#y').mouseenter(() => {
+    tY.timeScale(2);
     tY.reverse();
+  })
+
+  $('#y').mouseleave(() => {
+    tY.play();
   })
 
   tY2.to('#y2-1', 1, {
@@ -163,7 +172,12 @@ $(document).ready(() => {
 
 
   $('#y2').mouseenter(() => {
+    tY2.timeScale(2);
     tY2.reverse();
+  })
+
+  $('#y2').mouseenter(() => {
+    tY2.play();
   })
 
 
@@ -195,7 +209,12 @@ $(document).ready(() => {
 
 
   $('#w').mouseenter(() => {
+    tW.timeScale(2);
     tW.reverse();
+  })
+
+  $('#w').mouseenter(() => {
+    tW.play();
   })
 
 
@@ -231,7 +250,12 @@ $(document).ready(() => {
     })
 
   $('#w2').mouseenter(() => {
+    tW2.timeScale(2);
     tW2.reverse();
+  })
+
+  $('#w2').mouseenter(() => {
+    tW2.play();
   })
 
 })

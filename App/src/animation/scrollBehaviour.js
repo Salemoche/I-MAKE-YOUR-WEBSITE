@@ -112,14 +112,14 @@ const scrollWork = () => {
     // }, 2000);
 
 
-		$(".page__work .page__content").scrollTop( $(document).height() - $('footer').innerHeight() - $(window).innerHeight() );
+		// $(".page__work .page__content").scrollTop( $(document).height() - $('footer').innerHeight() - $(window).innerHeight() );
+		//
+		// console.log($(".page__work .page__content").scrollHeight);
+		// console.log($('footer').innerHeight());
+		// console.log($(window).height() );
+		// console.log($(document).height() );
 
-		console.log($(".page__work .page__content").scrollHeight);
-		console.log($('footer').innerHeight());
-		console.log($(window).height() );
-		console.log($(document).height() );
-
-		// $(".page__work .page__content").scrollTo(0,document.body.scrollHeight);
+		$(".page__work__content").scrollTop(50);
 
 }
 

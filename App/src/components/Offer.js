@@ -5,7 +5,7 @@ import Button from './Button'
 import Step from './Step'
 import Footer from './Footer'
 import ServicePackage from './ServicePackage'
-import { indentation, changeColor, hideMenu } from '../scripts/script'
+import { indentation, changeColor, hideMenu, indentationRegular, menuClick} from '../scripts/script'
 import { Link } from 'react-router-dom';
 
 import {TweenMax} from 'gsap/TweenMax';
@@ -111,27 +111,49 @@ class Offer extends React.Component {
     const package2Bullets = $('.package__info ul').eq(1).children();
     const packageInfo = $('.package__info').children();
     const stepItems = $('.page__content__step__container li');
+    const pageServicePackage = $('#servicePackage').children();
+
 
     if(window.innerWidth > 375) {
-      indentation(package1Children, -50);
-      indentation(package2Children, -50);
-      indentation(package3Children, -50);
-      indentation(package1Bullets, -20);
-      indentation(package2Bullets, -20);
-      indentation(pageOfferChildren, -20);
-      indentation(pageOfferText, -50);
-      indentation(stepItems, -80);
+      indentationRegular(package1Children, -50);
+      indentationRegular(package2Children, -50);
+      indentationRegular(package3Children, -50);
+      indentationRegular(package1Bullets, -20);
+      indentationRegular(package2Bullets, -20);
+      indentationRegular(pageOfferChildren, -20);
+      indentationRegular(pageOfferText, -50);
+      indentationRegular(stepItems, -80);
+
+      TweenMax.staggerFrom('.page__content__text p', 1, {
+        x: "+= 30px",
+        opacity: 0,
+        delay: 0.5
+      }, 0.3)
+    } else  {
+      indentationRegular(package1Children, -50);
+      indentationRegular(package2Children, -50);
+      indentationRegular(package3Children, -50);
+      indentationRegular(package1Bullets, -20);
+      indentationRegular(package2Bullets, -20);
+      indentationRegular(pageOfferChildren, -20);
+      indentationRegular(pageOfferText, -70);
+      indentationRegular(stepItems, -180);
+      indentationRegular(pageServicePackage, -40);
+      menuClick();
+
+      TweenMax.staggerFrom('.page__content__text p:first-of-type', 1, {
+        x: "+= 30px",
+        opacity: 0,
+        delay: 0.5
+      }, 0.3)
+
     }
 
 
     changeColor();
     hideMenu();
 
-    TweenMax.staggerFrom('.page__content__text p', 1, {
-      x: "+= 30px",
-      opacity: 0,
-      delay: 0.5
-    }, 0.3)
+
 
     TweenMax.from('Button', 1, {
       x: "+= 30px",
@@ -140,6 +162,10 @@ class Offer extends React.Component {
     })
 
     scrollOffer();
+
+    // $('$package').mouseenter(() => {
+    //   this.sibling().css('opacity', '0.2');
+    // });
   }
 
  render() {
